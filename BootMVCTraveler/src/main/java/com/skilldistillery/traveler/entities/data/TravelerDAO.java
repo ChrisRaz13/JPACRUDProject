@@ -8,9 +8,9 @@ public interface TravelerDAO {
 
 	
 	
-	public Travels findById(int id);
-	public List <Travels> findAll();
-	public Travels create (Travels actor);
-	public Travels update (int id, Travels updatedActor);
-	public boolean destroy(int id);
+	Travels findById(int travelId);
+	List <Travels> findAll();
+	Travels create (Travels actor);
+	Travels update (int id, Travels updatedActor);
+	boolean destroy(int id);
 }

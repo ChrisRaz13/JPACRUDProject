@@ -26,11 +26,29 @@ public class TravelerController {
 		return "home";
 	}
 
-	@GetMapping(path = "getTravels.do", params = "travelId")
+	@GetMapping(path = "getDestinations.do", params = "travelId")
 	public String showTravel(@RequestParam("travelId") int id, Model model) {
-		Travels travel = travelerDAO.findById(id);
+		Travels destinations = travelerDAO.findById(id);
 
-		model.addAttribute("travels", travel);
+		model.addAttribute("destinations", destinations);
 		return "travels/show";
 	}
+//	@PostMapping("/addTravel")
+//	public String addTravel(@ModelAttribute Travels travel, Model model) {
+//	    // Implement logic to add a new travel destination
+//	    // Redirect to the updated list view or show the newly added travel
+//	}
+//
+//	@PostMapping("/editTravel")
+//	public String editTravel(@ModelAttribute Travels updatedTravel, Model model) {
+//	    // Implement logic to update an existing travel destination
+//	    // Redirect to the updated list view or show the edited travel
+//	}
+//
+//	@GetMapping("/deleteTravel")
+//	public String deleteTravel(@RequestParam("travelId") int id, Model model) {
+//	    // Implement logic to delete a travel destination
+//	    // Redirect to the updated list view
+//	}
+
 }

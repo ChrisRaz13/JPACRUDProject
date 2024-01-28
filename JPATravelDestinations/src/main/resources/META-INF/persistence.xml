@@ -7,6 +7,7 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 <class>com.skilldistillery.traveler.entities.Travels</class>
+
 		<properties>
 			<property name="jakarta.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/Travel_Destinations" />
