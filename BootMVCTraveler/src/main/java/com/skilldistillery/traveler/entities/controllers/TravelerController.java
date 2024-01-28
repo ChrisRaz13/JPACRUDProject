@@ -59,11 +59,29 @@ public class TravelerController {
 
 	@GetMapping("/updateForm")
 	public String showUpdateForm(@RequestParam("travelId") int id, Model model) {
-	    Travels travelToUpdate = travelerDAO.findById(id);
+		Travels travelToUpdate = travelerDAO.findById(id);
 
-	    model.addAttribute("destinations", travelToUpdate);
+		model.addAttribute("destinations", travelToUpdate);
 
-	    return "travels/updateForm";
+		return "travels/updateForm";
 	}
-	
+	@PostMapping("/deleteTravel")
+	public String deleteTravel(@RequestParam("travelId") int id, Model model) {
+		boolean deleted = travelerDAO.destroy(id);
+
+		if (deleted) {
+			model.addAttribute("message", "Travel entry deleted successfully.");
+		} else {
+			model.addAttribute("message", "Unable to delete travel entry.");
+		}
+
+		return "redirect:/";
+	}
+	 @GetMapping("/traveledList")
+	    public String listTravels(Model model) {
+	        List<Travels> travelsList = travelerDAO.findAll();
+	        model.addAttribute("travels", travelsList);
+	        return "travels/traveledList";
+	    }
+
 }

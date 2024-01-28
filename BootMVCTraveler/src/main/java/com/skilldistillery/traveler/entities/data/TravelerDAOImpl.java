@@ -46,17 +46,18 @@ public class TravelerDAOImpl implements TravelerDAO {
 
 	@Override
 	public boolean destroy(int id) {
+		 em.getTransaction().begin();
 
-		em.getTransaction().begin();
-		Travels traveler = em.find(Travels.class, id);
+		    Travels traveler = em.find(Travels.class, id);
 
-		em.remove(traveler);
+		    if (traveler != null) {
+		        em.remove(traveler);
+		        em.getTransaction().commit();
+		    } else {
+		        em.getTransaction().rollback();
+		    }
 
-		em.getTransaction().commit();
-
-		traveler.getCity();
-
-		return em.find(Travels.class, id) == null;
+		    return em.find(Travels.class, id) == null;
 	}
 
 	@Override

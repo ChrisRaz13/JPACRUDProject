@@ -80,12 +80,22 @@
         a:hover {
             text-decoration: underline;
         }
+
+        #listTravelsLink {
+            display: inline-block;
+            margin-top: 10px;
+            color: #337ab7;
+            text-decoration: none;
+        }
+
+        #listTravelsLink:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
     <h2>Places Traveled</h2>
-
 
     <form action="/addTravel" method="post">
         <label for="newCity">City:</label>
@@ -106,6 +116,10 @@
 
         <input type="submit" value="Update Travel" />
     </form>
+    
+<form action="/traveledList" method="get">
+    <input type="submit" value="List Traveled Places" />
+</form>
 
 </body>
 </html>
