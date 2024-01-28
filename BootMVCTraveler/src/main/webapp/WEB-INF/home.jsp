@@ -4,20 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Home</title>
+    <title>Home</title>
 </head>
 <body>
-	<form action="getDestinations.do" method="GET">
-		Travel Destinations: <input type="text" name="travelId" /> <input type="submit"
-			value="Show Destination" />
-		<c:forEach var="destinations" items="${destinations}">
-			<ul>
-				<li><a href="getDestinations.do?id=${destination.id}"> ${destination.title} </a></li>
-			</ul>
-		</c:forEach>
-		
-		<a href="/createTravel">Create New Travel Entry</a>
-	</form>
+
+    <h2>Travel Destinations</h2>
+
+    <c:forEach var="travel" items="${travels}">
+        <p>${travel.id} - ${travel.city}, ${travel.country}</p>
+        <a href="<c:url value='/updateForm?travelId=${travel.id}'/>">Update Travel</a>
+    </c:forEach>
+
+    <form action="<c:url value='/updateForm'/>" method="get">
+        <label for="travelId">Enter Travel ID:</label>
+        <input type="text" id="travelId" name="travelId" required />
+        <input type="submit" value="Update Travel" />
+    </form>
+
 </body>
 </html>

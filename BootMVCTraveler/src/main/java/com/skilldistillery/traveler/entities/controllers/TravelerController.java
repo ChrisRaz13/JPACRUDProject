@@ -43,24 +43,27 @@ public class TravelerController {
 		model.addAttribute("destinations", createdTravel);
 		return "travels/create";
 	}
-	
+
 	@GetMapping("/createTravel")
 	public String showCreateTravelForm() {
-	    return "travels/create";
-	
+		return "travels/create";
+
+	}
+
+	@PostMapping("/updateTravel")
+	public String updateTravel(@ModelAttribute Travels updatedTravel, Model model) {
+		Travels updatedTravelEntity = travelerDAO.update(updatedTravel.getId(), updatedTravel);
+		model.addAttribute("destinations", updatedTravelEntity);
+		return "travels/show";
+	}
+
+	@GetMapping("/updateForm")
+	public String showUpdateForm(@RequestParam("travelId") int id, Model model) {
+	    Travels travelToUpdate = travelerDAO.findById(id);
+
+	    model.addAttribute("destinations", travelToUpdate);
+
+	    return "travels/updateForm";
 	}
 	
-//
-//	@PostMapping("/editTravel")
-//	public String editTravel(@ModelAttribute Travels updatedTravel, Model model) {
-//	    // Implement logic to update an existing travel destination
-//	    // Redirect to the updated list view or show the edited travel
-//	}
-//
-//	@GetMapping("/deleteTravel")
-//	public String deleteTravel(@RequestParam("travelId") int id, Model model) {
-//	    // Implement logic to delete a travel destination
-//	    // Redirect to the updated list view
-//	}
-
 }

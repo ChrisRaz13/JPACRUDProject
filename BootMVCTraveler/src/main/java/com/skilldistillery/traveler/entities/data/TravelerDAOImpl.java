@@ -33,14 +33,14 @@ public class TravelerDAOImpl implements TravelerDAO {
 	@Override
 	public Travels update(int id, Travels updateTravel) {
 
-		em.getTransaction().begin();
 		Travels managed = em.find(Travels.class, id);
 
-		managed.setCity(updateTravel.getCity());
-		managed.setCountry(updateTravel.getCountry());
-		managed.setRating(updateTravel.getRating());
+		if (managed != null) {
+			managed.setCity(updateTravel.getCity());
+			managed.setCountry(updateTravel.getCountry());
+			managed.setRating(updateTravel.getRating());
 
-		em.getTransaction().commit();
+		}
 		return managed;
 	}
 
