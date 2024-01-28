@@ -16,6 +16,8 @@
 				<li><a href="getDestinations.do?id=${destination.id}"> ${destination.title} </a></li>
 			</ul>
 		</c:forEach>
+		
+		<a href="/createTravel">Create New Travel Entry</a>
 	</form>
 </body>
 </html>

@@ -10,7 +10,7 @@ public interface TravelerDAO {
 	
 	Travels findById(int travelId);
 	List <Travels> findAll();
-	Travels create (Travels actor);
-	Travels update (int id, Travels updatedActor);
+	Travels createTravel (Travels travel);
+	Travels update (int id, Travels updatedTravel);
 	boolean destroy(int id);
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.traveler.entities.Travels;
@@ -33,11 +35,21 @@ public class TravelerController {
 		model.addAttribute("destinations", destinations);
 		return "travels/show";
 	}
-//	@PostMapping("/addTravel")
-//	public String addTravel(@ModelAttribute Travels travel, Model model) {
-//	    // Implement logic to add a new travel destination
-//	    // Redirect to the updated list view or show the newly added travel
-//	}
+
+	@PostMapping("/addTravel")
+	public String addTravel(@ModelAttribute Travels travel, Model model) {
+		Travels createdTravel = travelerDAO.createTravel(travel);
+
+		model.addAttribute("destinations", createdTravel);
+		return "travels/create";
+	}
+	
+	@GetMapping("/createTravel")
+	public String showCreateTravelForm() {
+	    return "travels/create";
+	
+	}
+	
 //
 //	@PostMapping("/editTravel")
 //	public String editTravel(@ModelAttribute Travels updatedTravel, Model model) {

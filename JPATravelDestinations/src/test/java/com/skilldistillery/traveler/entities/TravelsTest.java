@@ -48,5 +48,27 @@ class TravelsTest {
 		assertEquals("Vigo", travels.getCity());
 
 	}
+	 @Test
+	    void test_CreateTravel() {
+	        Travels newTravel = new Travels();
+	        newTravel.setCity("NewCity");
+	        newTravel.setCountry("NewCountry");
+	        newTravel.setRating(6);
 
+	        em.getTransaction().begin();
+
+	        em.persist(newTravel);
+
+	        em.getTransaction().commit();
+
+	        assertNotNull(newTravel.getId());
+
+	        Travels retrievedTravel = em.find(Travels.class, newTravel.getId());
+
+	        assertNotNull(retrievedTravel);
+	        assertEquals("NewCity", retrievedTravel.getCity());
+	        assertEquals("NewCountry", retrievedTravel.getCountry());
+	        assertEquals(6, retrievedTravel.getRating());
+
+}
 }

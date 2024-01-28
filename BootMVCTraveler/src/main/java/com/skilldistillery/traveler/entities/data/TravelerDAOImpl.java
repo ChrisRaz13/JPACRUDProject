@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 import com.skilldistillery.traveler.entities.Travels;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
@@ -25,25 +23,15 @@ public class TravelerDAOImpl implements TravelerDAO {
 	}
 
 	@Override
-	public Travels create(Travels traveler) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("TravelDestinations");
-		EntityManager em = emf.createEntityManager();
+	public Travels createTravel(Travels travel) {
 
-		// start the transaction
-		em.getTransaction().begin();
-		// write the customer to the database
-		em.persist(traveler);
-		// commit the changes (actually perform the operation)
-		em.getTransaction().commit();
+		em.persist(travel);
 
-		// return the Customer object
-		return traveler;
+		return travel;
 	}
 
 	@Override
 	public Travels update(int id, Travels updateTravel) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("TravelDestinations");
-		EntityManager em = emf.createEntityManager();
 
 		em.getTransaction().begin();
 		Travels managed = em.find(Travels.class, id);
@@ -53,15 +41,11 @@ public class TravelerDAOImpl implements TravelerDAO {
 		managed.setRating(updateTravel.getRating());
 
 		em.getTransaction().commit();
-		em.close();
-		emf.close();
 		return managed;
 	}
 
 	@Override
 	public boolean destroy(int id) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("TravelDestinations");
-		EntityManager em = emf.createEntityManager();
 
 		em.getTransaction().begin();
 		Travels traveler = em.find(Travels.class, id);
