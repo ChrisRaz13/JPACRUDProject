@@ -10,7 +10,9 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
+            background-image: url('https://img.freepik.com/free-vector/hand-drawn-travel-background_52683-85109.jpg'); 
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,14 +23,14 @@
         }
 
         h2 {
-            color: #333;
+            color: #000;
             margin-bottom: 20px;
         }
 
         #travelsContainer {
             max-width: 600px;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
@@ -36,7 +38,7 @@
 
         form {
             max-width: 400px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -116,11 +118,10 @@
 
         <input type="submit" value="Update Travel" />
     </form>
-    
-<form action="/traveledList" method="get">
-    <input type="submit" value="List of Traveled Places" />
-</form>
 
+    <form action="/traveledList" method="get">
+        <input type="submit" value="List of Traveled Places" />
+    </form>
 
 </body>
 </html>
