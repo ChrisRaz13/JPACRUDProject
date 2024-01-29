@@ -10,7 +10,9 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #2980B9, #6DD5FA); 
+            background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHVueGxpN21zNndxZXdxMzVwZmhnMzZwZnVva3czZjlsanR3M28zZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dYUslDahf6Uw71gH3t/giphy.gif'); 
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,7 +23,7 @@
         }
 
         h2 {
-            color: #fff;
+            color: #000;
             margin-bottom: 20px;
         }
 

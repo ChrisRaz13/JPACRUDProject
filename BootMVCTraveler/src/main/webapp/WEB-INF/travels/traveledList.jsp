@@ -10,7 +10,9 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #2980B9, #6DD5FA); 
+            background-image: url('https://wallpapercave.com/wp/wp3154579.jpg'); 
+            background-size: cover;
+            background-position: center;
             color: #000; 
             margin: 0;
             padding: 0;
