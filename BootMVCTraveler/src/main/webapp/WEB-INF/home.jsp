@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('https://img.freepik.com/free-vector/hand-drawn-travel-background_52683-85109.jpg'); 
+            background-image: url('https://i.pinimg.com/originals/3f/00/4f/3f004fbd0825ffbd4b9b11656a38f451.gif'); 
             background-size: cover;
             background-position: center;
             margin: 0;
