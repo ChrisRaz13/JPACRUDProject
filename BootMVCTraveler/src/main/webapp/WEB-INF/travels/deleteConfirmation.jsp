@@ -1,11 +1,68 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Confirmation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        h2 {
+            color: #dc3545; /* Red color for emphasis */
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="hidden"] {
+            display: none; /* Hide the hidden input */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #dc3545; /* Red color for delete action */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c82333;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff; /* Blue color for cancel action */
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .success-message {
+            color: #28a745; /* Green color for success message */
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
     <h2>Confirm Deletion</h2>
@@ -16,6 +73,10 @@
         <button type="submit">Yes, Delete</button>
     </form>
 
-    <a href="/traveledList">No, Cancel</a>
+    <div class="success-message">
+        ${message}
+    </div>
+
+    <a href="/traveledList">Go back to list</a>
 </body>
 </html>

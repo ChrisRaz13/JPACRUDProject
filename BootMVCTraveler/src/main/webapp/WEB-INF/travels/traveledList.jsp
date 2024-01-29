@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,14 +37,19 @@
             color: #fff;
         }
 
-        a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
+        .delete-form {
+            display: inline-block; 
         }
 
-        a:hover {
-            color: #0056b3;
+        .delete-link {
+            text-decoration: none;
+            color: #dc3545; 
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .delete-link:hover {
+            color: #c82333;
         }
 
         a.back-home {
@@ -74,7 +80,10 @@
                     <td>${travel.country}</td>
                     <td>${travel.rating}</td>
                     <td>
-                        <a href="/deleteForm?travelId=${travel.id}">Delete</a>
+                        <form class="delete-form" action="/deleteForm" method="get">
+                            <input type="hidden" name="travelId" value="${travel.id}">
+                            <button type="submit" class="delete-link">Delete</button>
+                        </form>
                     </td>
                 </tr>
             </c:forEach>
