@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Traveled Places</title>
+    <title>List of Traveled Places</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -24,7 +24,7 @@
         }
 
         h2 {
-            color: #000; 
+            color: #fff; 
             margin-bottom: 20px;
         }
 
@@ -73,13 +73,14 @@
         a.back-home {
             display: block;
             margin-top: 20px;
-            color: #000; 
+            color: #fff; 
             text-decoration: none;
             font-weight: bold;
         }
 
         a.back-home:hover {
             text-decoration: underline;
+            color: #ccc;
         }
     </style>
 </head>
