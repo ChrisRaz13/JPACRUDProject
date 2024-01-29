@@ -3,7 +3,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="en">
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,50 +10,67 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f8f9fa;
+            background: linear-gradient(to right, #2980B9, #6DD5FA); 
+            color: #000; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         h2 {
-            color: #007bff;
+            color: #000; 
+            margin-bottom: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         th, td {
-            border: 1px solid #dee2e6;
+            border: 1px solid #ccc;
             padding: 8px;
             text-align: left;
         }
 
         th {
-            background-color: #007bff;
+            background-color: #4CAF50;
             color: #fff;
         }
 
         .delete-form {
-            display: inline-block; 
+            display: inline-block;
         }
 
         .delete-link {
             text-decoration: none;
-            color: #dc3545; 
+            color: #FF6B6B;
             font-weight: bold;
             cursor: pointer;
         }
 
         .delete-link:hover {
-            color: #c82333;
+            color: #D32F2F;
         }
 
         a.back-home {
             display: block;
             margin-top: 20px;
+            color: #000; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.back-home:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -93,4 +109,4 @@
     <a href="/" class="back-home">Go Back Home</a>
 
 </body>
-</html>
+</html></html>

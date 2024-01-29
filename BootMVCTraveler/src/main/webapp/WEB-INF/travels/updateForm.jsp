@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
+            background: linear-gradient(to right, #2980B9, #6DD5FA); 
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,13 +21,13 @@
         }
 
         h2 {
-            color: #333;
+            color: #fff;
             margin-bottom: 20px;
         }
 
         form {
             max-width: 400px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); 
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -63,7 +63,7 @@
         a {
             display: block;
             margin-top: 10px;
-            color: #337ab7;
+            color: #fff;
             text-decoration: none;
         }
 

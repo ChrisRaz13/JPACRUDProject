@@ -109,14 +109,14 @@
         <label for="newRating">Rating:</label>
         <input type="number" id="newRating" name="rating" required />
 
-        <input type="submit" value="Add Travel" />
+        <input type="submit" value="Add a new place" />
     </form>
 
     <form action="/updateForm" method="get">
-        <label for="travelId">Enter Travel ID:</label>
+        <label for="travelId">Enter a Travel ID:</label>
         <input type="text" id="travelId" name="travelId" required />
 
-        <input type="submit" value="Update Travel" />
+        <input type="submit" value="Update by ID" />
     </form>
 
     <form action="/traveledList" method="get">
