@@ -91,7 +91,7 @@
         <input type="submit" value="Update" />
     </form>
 
-    <a href="<c:url value='/getDestinations.do?travelId=${destinations.id}'/>">Back to Details</a>
+    <a href="<c:url value='/getDestinations.do?travelId=${destinations.id}'/>">Home</a>
 
 </body>
 </html>

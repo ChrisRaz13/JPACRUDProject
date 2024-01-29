@@ -115,24 +115,19 @@ class TravelsTest {
 
 	@Test
 	void testDestroyTravel() {
-		Travels travelToDestroy = new Travels();
-		travelToDestroy.setCity("To Be Deleted");
-		travelToDestroy.setCountry("Delete Country");
-		travelToDestroy.setRating(75);
+	    Travels travelToDestroy = new Travels();
+	    travelToDestroy.setCity("To Be Deleted");
+	    travelToDestroy.setCountry("Delete Country");
+	    travelToDestroy.setRating(75);
 
-		em.persist(travelToDestroy);
-		em.getTransaction().commit();
+	    em.persist(travelToDestroy);
 
-		int travelId = travelToDestroy.getId();
+	    int travelId = travelToDestroy.getId();
 
-		em.getTransaction().begin();
-		em.remove(travelToDestroy);
-		em.getTransaction().commit();
+	    em.remove(travelToDestroy);
 
-		assertDoesNotThrow(() -> {
-			em.find(Travels.class, travelId);
-		});
-
-		assertNull(em.find(Travels.class, travelId), "Deleted travel entry should not exist in the database");
+	    assertNull(em.find(Travels.class, travelId), "Deleted travel entry should not exist in the database");
 	}
+
+
 }

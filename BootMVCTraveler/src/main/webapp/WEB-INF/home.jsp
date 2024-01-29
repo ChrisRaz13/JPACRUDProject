@@ -118,8 +118,9 @@
     </form>
     
 <form action="/traveledList" method="get">
-    <input type="submit" value="List Traveled Places" />
+    <input type="submit" value="List of Traveled Places" />
 </form>
+
 
 </body>
 </html>

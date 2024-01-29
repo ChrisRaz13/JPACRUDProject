@@ -2,6 +2,7 @@ package com.skilldistillery.traveler.entities.data;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.traveler.entities.Travels;
@@ -9,7 +10,7 @@ import com.skilldistillery.traveler.entities.Travels;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
-
+@Repository
 @Service
 @Transactional
 public class TravelerDAOImpl implements TravelerDAO {
@@ -46,19 +47,21 @@ public class TravelerDAOImpl implements TravelerDAO {
 
 	@Override
 	public boolean destroy(int id) {
-		 em.getTransaction().begin();
+	    try {
+	        Travels traveler = em.find(Travels.class, id);
 
-		    Travels traveler = em.find(Travels.class, id);
-
-		    if (traveler != null) {
-		        em.remove(traveler);
-		        em.getTransaction().commit();
-		    } else {
-		        em.getTransaction().rollback();
-		    }
-
-		    return em.find(Travels.class, id) == null;
+	        if (traveler != null) {
+	            em.remove(traveler); 
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false;
+	    }
 	}
+	
 
 	@Override
 	public List<Travels> findAll() {

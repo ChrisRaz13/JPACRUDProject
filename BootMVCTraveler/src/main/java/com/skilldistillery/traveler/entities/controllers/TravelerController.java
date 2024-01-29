@@ -1,5 +1,6 @@
 package com.skilldistillery.traveler.entities.controllers;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,23 +66,38 @@ public class TravelerController {
 
 		return "travels/updateForm";
 	}
-	@PostMapping("/deleteTravel")
-	public String deleteTravel(@RequestParam("travelId") int id, Model model) {
-		boolean deleted = travelerDAO.destroy(id);
 
-		if (deleted) {
-			model.addAttribute("message", "Travel entry deleted successfully.");
-		} else {
-			model.addAttribute("message", "Unable to delete travel entry.");
+	@PostMapping("/deleteTravel")
+	public String deleteTravel(@ModelAttribute Travels deleteTravel, Model model) {
+		try {
+			boolean deleted = travelerDAO.destroy(deleteTravel.getId());
+
+			if (deleted) {
+				model.addAttribute("message", "Travel entry deleted successfully.");
+			} else {
+				model.addAttribute("message", "Unable to delete travel entry.");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("message", "An unexpected error occurred during deletion.");
 		}
 
-		return "redirect:/";
+		return "travels/deleteConfirmation";
 	}
-	 @GetMapping("/traveledList")
-	    public String listTravels(Model model) {
-	        List<Travels> travelsList = travelerDAO.findAll();
-	        model.addAttribute("travels", travelsList);
-	        return "travels/traveledList";
-	    }
+
+	@GetMapping("/deleteForm")
+	public String showDelete(@RequestParam("travelId") int travelId, Model model) {
+		Travels travelToDelete = travelerDAO.findById(travelId);
+		model.addAttribute("deleteTravel", travelToDelete);
+		return "travels/deleteConfirmation";
+	}
+
+	@GetMapping("/traveledList")
+	public String listTravels(Model model) {
+		List<Travels> travelsList = travelerDAO.findAll();
+		travelsList.sort(Comparator.comparingInt(Travels::getRating).reversed());
+		model.addAttribute("travels", travelsList);
+		return "travels/traveledList";
+	}
 
 }
