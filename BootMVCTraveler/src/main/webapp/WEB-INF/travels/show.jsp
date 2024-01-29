@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            background: linear-gradient(to right, #3498db, #8e44ad); 
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,16 +18,16 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
             justify-content: center;
             min-height: 100vh;
             text-align: center;
+            color: #000; 
         }
 
         h1 {
-            color: #333;
             margin-bottom: 20px;
         }
 
         div {
             max-width: 600px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -40,7 +40,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
         li {
             margin-bottom: 15px;
-            color: #555;
+            color: #333; 
         }
 
         strong {
@@ -50,7 +50,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
         a {
             display: block;
             margin-top: 20px;
-            color: #337ab7;
+            color: #3498db; 
             text-decoration: none;
             font-weight: bold;
         }
@@ -70,6 +70,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
             <li><strong>Rating:</strong> ${destinations.rating}</li>
         </ul>
         <a href="/">Back to Home</a>
+        <a href="/traveledList" class="back-to-list">Back to Traveled List</a>
     </div>
 
 </body>

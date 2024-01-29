@@ -15,7 +15,7 @@
         }
 
         h2 {
-            color: #dc3545; /* Red color for emphasis */
+            color: #dc3545; 
         }
 
         p {
@@ -28,13 +28,13 @@
         }
 
         input[type="hidden"] {
-            display: none; /* Hide the hidden input */
+            display: none; 
         }
 
         button {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #dc3545; /* Red color for delete action */
+            background-color: #dc3545; 
             color: #fff;
             border: none;
             cursor: pointer;
@@ -48,7 +48,7 @@
             display: block;
             margin-top: 20px;
             text-decoration: none;
-            color: #007bff; /* Blue color for cancel action */
+            color: #007bff; 
             font-weight: bold;
             font-size: 16px;
         }
@@ -58,7 +58,7 @@
         }
 
         .success-message {
-            color: #28a745; /* Green color for success message */
+            color: #28a745; 
             margin-top: 20px;
             font-size: 18px;
         }

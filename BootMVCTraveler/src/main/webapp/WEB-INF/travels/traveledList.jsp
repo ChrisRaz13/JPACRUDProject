@@ -46,18 +46,25 @@
             color: #fff;
         }
 
-        .delete-form {
+        .action-column {
+            display: flex;
+            gap: 8px;
+        }
+
+        .delete-form,
+        .update-form {
             display: inline-block;
         }
 
-        .delete-link {
+        .delete-link,
+        .update-link {
             text-decoration: none;
-            color: #FF6B6B;
             font-weight: bold;
             cursor: pointer;
         }
 
-        .delete-link:hover {
+        .delete-link:hover,
+        .update-link:hover {
             color: #D32F2F;
         }
 
@@ -95,10 +102,14 @@
                     <td>${travel.city}</td>
                     <td>${travel.country}</td>
                     <td>${travel.rating}</td>
-                    <td>
+                    <td class="action-column">
                         <form class="delete-form" action="/deleteForm" method="get">
                             <input type="hidden" name="travelId" value="${travel.id}">
                             <button type="submit" class="delete-link">Delete</button>
+                        </form>
+                        <form class="update-form" action="/updateForm" method="get">
+                            <input type="hidden" name="travelId" value="${travel.id}">
+                            <button type="submit" class="update-link">Update</button>
                         </form>
                     </td>
                 </tr>
@@ -109,4 +120,4 @@
     <a href="/" class="back-home">Go Back Home</a>
 
 </body>
-</html></html>
+</html>

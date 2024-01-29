@@ -60,15 +60,18 @@
             background-color: #45a049;
         }
 
-        a {
+        .back-to-list {
             display: block;
             margin-top: 10px;
+            background-color: #007bff;
             color: #fff;
             text-decoration: none;
+            padding: 10px;
+            border-radius: 4px;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .back-to-list:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -92,6 +95,8 @@
     </form>
 
     <a href="<c:url value='/getDestinations.do?travelId=${destinations.id}'/>">Home</a>
+
+    <a href="/traveledList" class="back-to-list">Back to Traveled List</a>
 
 </body>
 </html>
